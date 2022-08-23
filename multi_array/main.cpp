@@ -31,4 +31,11 @@ int main()
     //assert(A[0][0][0] == 5);
     assert(A[0][0][0] == 4);
 
+    // test 2: accessing elements
+    boost::array<array_type::index,3> idx = {{0,0,0}};
+    A(idx) = 3;
+    assert(A(idx) == 3);
+    //assert(A(idx) == 4);
+
+
 }
