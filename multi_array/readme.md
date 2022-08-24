@@ -25,3 +25,9 @@ reshape to dim (2,3,4)
 16 17 18 19
 20 21 22 23
 ```
+
+
+### Ooops!
+
+boost::multi_array does not have function for [array permulation](https://stackoverflow.com/questions/45763316/doing-permutation-of-the-dimension-in-a-boost-multi-array)
+
