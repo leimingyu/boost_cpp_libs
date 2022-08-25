@@ -74,4 +74,50 @@ int main()
         std::cout << std::endl;
     }
 
+    // test 4: permulation  from dim(2,3,4,1) to dim(1,3,4,2)
+    std::cout << "permulation from B(2,3,4,1) to tB(1,3,4,2)\n";
+    array_type  B(extents[2][3][4][1]);
+    array_type tB(extents[1][3][4][2]);
+
+    // Assign values to the elements
+    std::cout << "\nInitialize B and update the value to the transposed B.\n";
+    values = 0;
+    for(index i = 0; i != 2; ++i) {
+        for(index j = 0; j != 3; ++j) {
+            for(index m = 0; m != 4; ++m) {
+                for(index n = 0; n != 1; ++n) {
+                    B[i][j][m][n]  = values++;
+                    tB[n][j][m][i] = B[i][j][m][n];
+                }
+            }
+        }
+    }
+
+    std::cout << "\ntensor B:\n\n";
+    for(index i = 0; i != 2; ++i) {
+        for(index j = 0; j != 3; ++j) {
+            for(index m = 0; m != 4; ++m) {
+                for(index n = 0; n != 1; ++n) {
+                    std::cout <<  B[i][j][m][n] << " ";
+                }
+                std::cout << std::endl;
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+    }
+
+    std::cout << "\ntensor tB:\n\n";
+    for(index i = 0; i != 1; ++i) {
+        for(index j = 0; j != 3; ++j) {
+            for(index m = 0; m != 4; ++m) {
+                for(index n = 0; n != 2; ++n) {
+                    std::cout <<  tB[i][j][m][n] << " ";
+                }
+                std::cout << std::endl;
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+    }
 }
